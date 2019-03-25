@@ -48,12 +48,24 @@ class conexionMSQL
     {
         $res = mysqli_query($this->con, $sql);
         $data = null;
-        while ($fila = mysqli_fetch_assoc($res)) {
+        while ($fila = mysqli_fetch_assoc($res)) { //mysqli_fetch_assoc: almacena los nombres de las tablas como indices
             $data[] = $fila;
         }
         return $data;
     }
+
+    function actualizarFacturas($sql)
+    {
+        mysqli_query($this->con, $sql);
+        if (mysqli_affected_rows($this->con) <= 0) {  //mysqli_affected_rows: VALIDA CUANDO UN REGISTRO ES AFECTADO
+            echo "no se pudo realizar la actualizacion";
+        } else {
+            echo "se han realizado los cambios correctamente";
+        }
+    }
+
+
+
+
 }
-
-
  ?>
