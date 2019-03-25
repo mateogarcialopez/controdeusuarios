@@ -10,7 +10,7 @@
 <?php 
 $cod=$_GET["parametro"]; //capturamos el codigo(pk_articulos)
 
-require "class/conexionMSQL.php";
+require "../class/conexionMSQL.php";
 $obj= new conexionMSQL();
 
 $data=$obj->consultar("SELECT * FROM tbl_articulos WHERE pk_articulo=$cod");

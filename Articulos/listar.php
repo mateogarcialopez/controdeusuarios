@@ -6,17 +6,17 @@
     <title>Document</title>
     <script>
     function modificar(cod){ //funcion para capturar las pk de articulos
-      window.location="http://localhost/controlDeUusuarios/modificar.php?parametro="+cod;
+      window.location="http://localhost/controlDeUusuarios/Articulos/modificar.php?parametro="+cod;
     }
     function eliminar(cod){ //funcion para capturar las pk de articulos
-      window.location="http://localhost/controlDeUusuarios/capturar.php?p="+cod+"&funcion=eliminar";
+      window.location="http://localhost/controlDeUusuarios/Articulos/capturar.php?p="+cod+"&funcion=eliminar";
     }
     </script>
 </head>
 <body>
 <?php 
 //para la tabla articulos
-require "class/conexionMSQL.php";
+require "../class/conexionMSQL.php";
 $obj = new conexionMSQL();
 
 $datos=$obj->consultar("SELECT descripcionArticulo,stockArticulo,stock_minArticulo,pk_articulo FROM tbl_articulos");
@@ -42,8 +42,8 @@ $datos=$obj->consultar("SELECT descripcionArticulo,stockArticulo,stock_minArticu
       <td><?php echo $fila["descripcionArticulo"] ;?></td>
       <td><?php echo $fila["stockArticulo"]; ?></td>
       <td><?php echo $fila["stock_minArticulo"]; ?></td>
-      <td><img src="img/pc1.png" width="20" onclick="modificar(<?php echo $fila["pk_articulo"] ; ?>)" /></td> 
-      <td><img src="img/eliminar.png" width="20" onclick="eliminar(<?php echo $fila["pk_articulo"] ; ?>)" /></td> 
+      <td><img src="../img/pc1.png" width="20" onclick="modificar(<?php echo $fila["pk_articulo"] ; ?>)" /></td> 
+      <td><img src="../img/eliminar.png" width="20" onclick="eliminar(<?php echo $fila["pk_articulo"] ; ?>)" /></td> 
     </tr>
     <?php } ?>
 </table>

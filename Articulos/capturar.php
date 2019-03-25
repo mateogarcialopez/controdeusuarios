@@ -1,5 +1,5 @@
 <?php 
-require "class/conexionMSQL.php";
+require "../class/conexionMSQL.php";
 
 $funcion=$_REQUEST["funcion"];
 $p=$_GET["p"];
