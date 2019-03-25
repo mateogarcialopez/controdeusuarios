@@ -1,0 +1,59 @@
+<?php 
+
+class conexionMSQL
+{
+
+    function __construct()
+    {
+
+        try {
+            //declarando variable
+            $host = "localhost";
+            $db_name = "modeloventas";
+            $user = "root";
+            $pass = "";
+
+            //cadena de conexion
+            $this->con = mysqli_connect($host, $user, $pass) or die("error en la base de datos");
+            //seleccion de la base de datos     
+            mysqli_select_db($this->con, $db_name) or die("no se ha encontrado la base de datos");
+        } catch (Exception $ex) {
+            echo $ex;
+        }
+    }
+
+    function consultar($sql)
+    {
+        $res = mysqli_query($this->con, $sql);
+        $data = null;
+        while ($fila = mysqli_fetch_assoc($res)) {
+
+            $data[] = $fila;
+        }
+        return $data;
+    }
+
+    function actualizar($sql)
+    {
+
+        mysqli_query($this->con, $sql);
+        if (mysqli_affected_rows($this->con) <= 0) {
+            echo "no se pudo realizar la actualizacion";
+        } else {
+            echo "se han realizado los cambios correctamente";
+        }
+    }
+
+    function consultarFactura($sql)
+    {
+        $res = mysqli_query($this->con, $sql);
+        $data = null;
+        while ($fila = mysqli_fetch_assoc($res)) {
+            $data[] = $fila;
+        }
+        return $data;
+    }
+}
+
+
+ ?>

@@ -1,0 +1,45 @@
+<?php 
+require_once("class/class.php") ;
+ ?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Contro De Usuarios</title>
+</head>
+<body>
+    <h1>Control De Uusuarios</h1>
+
+
+ <table>
+          <tr>
+          <td>Descripcion<td>
+          <td>Stock<td>
+          <td>Stock Minimo<td>
+          <td>Editar<td>
+          <td>Eliminar<td>
+         </tr>
+   <?php
+    $tra= new Trabajo();
+    $datos=$tra->get_datos();
+    for($i=0;$i<sizeof($datos);$i++)
+    {
+    ?>
+    <tr>
+        <tr>
+          <td><?php echo $datos[$i]["descripcionArticulo"];?><td>
+          <td>Stock<td>
+          <td>Stock Minimo<td>
+          <td>Editar<td>
+          <td>Eliminar<td>
+       </tr>  
+    </tr>
+    <?php
+    }
+    ?>
+   
+</table> 
+   
+    
+</body>
+</html>
