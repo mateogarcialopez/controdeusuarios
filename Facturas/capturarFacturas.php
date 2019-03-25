@@ -1,8 +1,8 @@
 <?php
 require "../class/conexionMSQL.php";
 
-$funcion = $_REQUEST["funcion"];
-$p = $_GET["p"];
+$funcion=$_REQUEST["funcion"];
+$p=$_GET["p"];
 
 if($funcion!="eliminar"){
 
@@ -22,15 +22,15 @@ $obj = new conexionMSQL(); //instanciamos la conexion con la base de datos
 
 
 if ($funcion=="modificar") {
-    $sql="UPDATE tbl_factura SET pk_factura='$pkfactura', fecha='$fecha', iva='$iva', descuento='$descuento', fk_cliente='$fkcliente', fk_cajero='$fkfcajero' WHERE pk_factura=$cod";
+    $sql="UPDATE tbl_factura SET fecha='$fecha', iva='$iva', descuento='$descuento', fk_cliente='$fkcliente', fk_cajero='$fkfcajero' WHERE pk_factura=$cod";
 } else if ($funcion=="eliminar") {
     $sql="DELETE FROM tbl_factura WHERE pk_factura='$p'";
 } else {
-    $sql="INSERT INTO tbl_factura (pk_factura,fecha,iva,descuento,fk_cliente,fk_cajero) VALUES('$pkfactura','$fecha','$iva','$descuento','$pkcliente','$pkfcajero');";
+    $sql="INSERT INTO tbl_factura (pk_factura,fecha,iva,descuento,fk_cliente,fk_cajero) VALUES('$pkfactura','$fecha','$iva','$descuento','$fkcliente','$fkfcajero');";
 }
 
 $obj->actualizarFacturas($sql);
 header("location: listarFacturas.php");
 
-
+?>
  
