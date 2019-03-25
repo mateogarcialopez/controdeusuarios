@@ -21,12 +21,12 @@ if($funcion!="eliminar"){
 $obj = new conexionMSQL(); //instanciamos la conexion con la base de datos
 
 
-if ($funcion == "modificar") {
-    $sql = "UPDATE tbl_factura SET pk_factura='$pkfactura', fecha='$fecha', iva='$iva', descuento='$descuento', fk_cliente='$fkcliente', fk_cajero='$fkfcajero' WHERE pk_factura=$cod";
-} else if ($funcion = "eliminar") {
-    $sql = "DELETE FROM tbl_factura WHERE pk_factura='$p'";
+if ($funcion=="modificar") {
+    $sql="UPDATE tbl_factura SET pk_factura='$pkfactura', fecha='$fecha', iva='$iva', descuento='$descuento', fk_cliente='$fkcliente', fk_cajero='$fkfcajero' WHERE pk_factura=$cod";
+} else if ($funcion=="eliminar") {
+    $sql="DELETE FROM tbl_factura WHERE pk_factura='$p'";
 } else {
-    $sql = "INSERT INTO tbl_factura (pk_factura,fecha,iva,descuento,fk_cliente,fk_cajero) VALUES('$pkfactura','$fecha','$iva','$descuento','$pkcliente','$pkfcajero');";
+    $sql="INSERT INTO tbl_factura (pk_factura,fecha,iva,descuento,fk_cliente,fk_cajero) VALUES('$pkfactura','$fecha','$iva','$descuento','$pkcliente','$pkfcajero');";
 }
 
 $obj->actualizarFacturas($sql);
