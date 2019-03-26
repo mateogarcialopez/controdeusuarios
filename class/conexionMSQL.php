@@ -5,12 +5,13 @@ class conexionMSQL
 
     function __construct()
     {
+      
 
         try {
             //declarando variable
             $host = "localhost";
             $db_name = "modeloventas";
-            $user = "root";
+            $user = "cajero";
             $pass = "";
 
             //cadena de conexion
