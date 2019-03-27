@@ -1,19 +1,39 @@
 <?php 
+session_start();
+//$rol=$_SESSION['tipo_usr'];
+//echo "prueba".$rol;
 
 class conexionMSQL
 {
 
     function __construct()
     {
-      
 
-        try {
-            //declarando variable
-            $host = "localhost";
-            $db_name = "modeloventas";
-            $user = "cajero";
-            $pass = "";
-
+        try {            
+             //declarando variable
+             $rol=$_SESSION['tipo_usr'];
+            if($rol=="cajero"){
+                $host = "localhost";
+                $db_name = "modeloventas";
+                $user = "root";
+                $pass = "";
+            }else if($rol=="supervisor"){
+                $host = "localhost";
+                $db_name = "modeloventas";
+                $user = "root";
+                $pass = "";
+            }else if($rol=="administrador"){
+                $host = "localhost";
+                $db_name = "modeloventas";
+                $user = "root";
+                $pass = "";
+            }else if($rol=="gerente"){
+                $host = "localhost";
+                $db_name = "modeloventas";
+                $user = "root";
+                $pass = "";
+            }
+    
             //cadena de conexion
             $this->con = mysqli_connect($host, $user, $pass) or die("error en la base de datos");
             //seleccion de la base de datos     
