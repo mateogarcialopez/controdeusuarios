@@ -27,6 +27,11 @@
     ?>
 
     <h3>Listado De Sucursales</h3>
+    <table border=1>
+        <tr>
+            <td> <a href="http://localhost/controlDeUusuarios/Sucursal/guardarSucursales.php"><img src="../img/adc.png" width="20" /></a></td>
+        </tr>
+    </table <hr>
     <table border="1">
         <tr>
             <td>pk_sucursal</td>

@@ -16,13 +16,13 @@ class conexionMSQL
             if($rol=="cajero"){
                 $host = "localhost";
                 $db_name = "modeloventas";
-                $user = "root";
-                $pass = "";
+                $user = "cajero";
+                $pass = "cajero";
             }else if($rol=="supervisor"){
                 $host = "localhost";
                 $db_name = "modeloventas";
-                $user = "root";
-                $pass = "";
+                $user = "supervisor";
+                $pass = "supervisor";
             }else if($rol=="administrador"){
                 $host = "localhost";
                 $db_name = "modeloventas";
@@ -31,8 +31,8 @@ class conexionMSQL
             }else if($rol=="gerente"){
                 $host = "localhost";
                 $db_name = "modeloventas";
-                $user = "root";
-                $pass = "";
+                $user = "gerente";
+                $pass = "gerente";
             }
     
             //cadena de conexion

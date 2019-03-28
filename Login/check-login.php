@@ -53,16 +53,19 @@ session_start();
 		//if (password_verify($_POST['password'], $hash)) {
 		
 		if ($password==$hash) {
-			include '../Articulos/listar.php';
+			//include '../Articulos/listar.php';
 			$_SESSION['loggedin'] = true;
 			$_SESSION['name'] = $row['Name'];
 			$_SESSION['tipo_usr'] = $row['tipo_usr'];
 			$_SESSION['start'] = time();
 			$_SESSION['expire'] = $_SESSION['start'] + (1 * 60);
 
-			echo "<div class='alert alert-success mt-4' role='alert'><strong>Welcome!</strong> $row[Name], $row[tipo_usr]		
-				<p><a href='edit-profile.php'>Edit Profile</a></p>	
-				<p><a href='logout.php'>Logout</a></p></div>";
+			echo "<div class='alert alert-success mt-4' role='alert'><strong>Bienvenido !</strong> $row[Name], $row[tipo_usr]		
+				<p><a href='../Articulos/listar.php'>Articulos</a></p>
+				<p><a href='../Facturas/listarFacturas.php'>Facturas</a></p>
+				<p><a href='../Sucursal/listarSucursales.php'>Sucursales</a></p>
+				<p><a href='logout.php'>Logout</a></p>
+				</div>";
 		} else {
 			echo "<div class='alert alert-danger mt-4' role='alert'>Email or Password are incorrects!
 				<p><a href='login.html'><strong>Please try again!</strong></a></p></div>";

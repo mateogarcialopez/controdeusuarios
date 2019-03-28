@@ -27,9 +27,14 @@
 
     //print_r($datos); //el print_r nos permite mostrar todos los datos que existen dentro de un array
     ?>
-
+    <h3>Listado De Articulos</h3>
+    <table border=1>
+        <tr>
+            <td> <a href="http://localhost/controlDeUusuarios/Articulos/guardar.php"><img src="../img/adc.png" width="20" /></a></td>
+        </tr>
+    </table <hr>
     <table border="1">
-        <h3>Listado De Articulos</h3>
+
         <tr>
             <td>codigo</td>
             <td>Descripcion</td>
@@ -48,7 +53,7 @@
             <td><img src="../img/eliminar.png" width="20" onclick="eliminar(<?php echo $fila["pk_articulo"]; ?>)" /></td>
         </tr>
         <?php 
-      } ?>
+    } ?>
     </table>
 </body>
 

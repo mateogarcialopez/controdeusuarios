@@ -10,7 +10,7 @@
             window.location = "http://localhost/controlDeUusuarios/Facturas/modificarFacturas.php?parametro=" + cod; // enviamos el codigo capturado a otro archivo
         }
 
-        function eliminar(cod) { 
+        function eliminar(cod) {
             window.location = "http://localhost/controlDeUusuarios/Facturas/capturarFacturas.php?p=" + cod + "&funcion=eliminar";
         }
     </script>
@@ -24,8 +24,13 @@
 
     $datosFactura = $obj->consultarFactura("SELECT * FROM tbl_factura");
     ?>
-
     <h3>Listado De Facturas</h3>
+
+    <table border=1>
+        <tr>
+            <td> <a href="http://localhost/controlDeUusuarios/Facturas/guardarFacturas.php"><img src="../img/adc.png" width="20" /></a></td>
+        </tr>
+    </table <hr>
     <table border="1">
         <tr>
             <td>Codigo</td>
