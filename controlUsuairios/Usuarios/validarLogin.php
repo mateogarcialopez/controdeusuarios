@@ -12,17 +12,24 @@ session_start();
 
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+        <script>
+            function prueba(var ) {
+            mateo = var
+                    console.log(var );
+                    alert(mateo);
+            }
+        </script>
     </head>
     <body>
         <div class="container">
 
             <?php
             // Connection info. file
-            include '../Articulos/listarArticulos.php';
-            require "../controlDB.php";
 
-
-
+            $dbhost = "localhost";    // localhost or IP
+            $dbuser = "root";    // database username
+            $dbpass = "";       // database password
+            $dbname = "phplogin";    // database name
             // Connection variables
             $conn = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
 
@@ -33,23 +40,14 @@ session_start();
 
             // data sent from form login.html 
             $email = $_POST['email'];
-            $password = $_POST['password'];
-            
-
-           /* function capturarUsuario() {
-                $tipo_usr = $row['tipo_usr'];
-                return $tipo_usr;
-            }*/
+            $password = md5($_POST['password']);
 
             // Query sent to database
-            $result = mysqli_query($conn, "SELECT Email, Password, Name FROM users WHERE Email = '$email'");
-
-
+            $result = mysqli_query($conn, "SELECT Email, Password, Name, tipo_usr FROM users WHERE Email = '$email'");
 
             // Variable $row hold the result of the query
             $row = mysqli_fetch_assoc($result);
-
-
+            $str = $row['tipo_usr'];
             // Variable $hash hold the password hash on database
             $hash = $row['Password'];
 
@@ -58,16 +56,22 @@ session_start();
               match the password hash on the database. If everything is OK the session
               is created for one minute. Change 1 on $_SESSION[start] to 5 for a 5 minutes session.
              */
-            if (password_verify($_POST['password'], $hash)) {
-
+            if ($password==$hash) {
+            
                 $_SESSION['loggedin'] = true;
                 $_SESSION['name'] = $row['Name'];
                 $_SESSION['start'] = time();
+                $_SESSION['tipo_usr'] = $row['tipo_usr'];
                 $_SESSION['expire'] = $_SESSION['start'] + (1 * 60);
 
-                echo "<div class='alert alert-success mt-4' role='alert'><strong>Welcome!</strong> $row[Name]			
-				<p><a href='edit-profile.php'>Edit Profile</a></p>	
-				<p><a href='logout.php'>Logout</a></p></div>";
+                echo "<div class='alert alert-success mt-4' role='alert'><strong>Welcome!</strong> $row[Name] ($row[tipo_usr])			
+				<p><a onclick=\"prueba($row[tipo_usr])\" href='../Articulos/listarArticulos.php'>ARTICULOS</a></p>
+                                <p><a href='../Factura/listarFacturas.php'>FACTURAS</a></p>
+                                <p><a href='../Sucursales/listarSucursales.php'>SUCURSALES</a></p>
+                                <p><a href='edit-profile.php'></a></p>
+				<p><a href='logout.php'>Logout</a></p>       
+                               
+                    </div>";
             } else {
                 echo "<div class='alert alert-danger mt-4' role='alert'>Email or Password are incorrects!
 				<p><a href='login.html'><strong>Please try again!</strong></a></p></div>";

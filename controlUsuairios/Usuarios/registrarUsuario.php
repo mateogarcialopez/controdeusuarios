@@ -13,15 +13,7 @@
     </head>
     <body>
 
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-12">
-                    <h1>PHP MySQL login</h1>
-                    <p>A login App with SESSIONS, Password Hash, and Password recovery made with PHP 7, MySQL, phpMyAdmin, and Bootstrap.</p>		
-                </div>
-            </div>
-
-            <div class="row">	
+              <div class="row">	
                 <div class="col-sm-12 col-md-6 col-lg-6">
 
                     <h3>Create an account</h3><hr />

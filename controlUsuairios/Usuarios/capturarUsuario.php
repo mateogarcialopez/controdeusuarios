@@ -17,9 +17,9 @@
             <?php
             // Connection variables
             $dbhost = "localhost";    // localhost or IP
-            $dbuser = "postgres";    // database username
-            $dbpass = "root";       // database password
-            $dbname = "ventasModelo";    // database name
+            $dbuser = "root";    // database username
+            $dbpass = "";       // database password
+            $dbname = "phplogin";    // database name
 
             $conn = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
 
@@ -55,14 +55,14 @@
                 $tipo_usr=$_POST['tipo_usr'];
 
                 // The password_hash() function convert the password in a hash before send it to the database
-                $passHash = password_hash($pass, PASSWORD_DEFAULT);
+                $passHash = md5($pass);
 
                 // Query to send Name, Email and Password hash to the database
                 $query = "INSERT INTO users (Name, Email, Password, tipo_usr) VALUES ('$name', '$email', '$passHash', '$tipo_usr')";
 
                 if (mysqli_query($conn, $query)) {
                     echo "<div class='alert alert-success mt-4' role='alert'><h3>Your account has been created.</h3>
-		<a class='btn btn-outline-primary' href='login.html' role='button'>Login</a></div>";
+		<a class='btn btn-outline-primary' href='login.php' role='button'>Login</a></div>";
                 } else {
                     echo "Error: " . $query . "<br>" . mysqli_error($conn);
                 }

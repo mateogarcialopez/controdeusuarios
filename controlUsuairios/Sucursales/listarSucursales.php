@@ -23,6 +23,12 @@
         $datos = $obj->consultar("SELECT * FROM public.\"tbl_sucursal\"");
         ?>
     <h1>Sucursales</h1>
+        <table border=1 >
+        <tr>
+            <td> <a  href="http://localhost/controlUsuairios/menuPrincipal.php" ><img  src="../Views/img/home.png" width="20"  /></a></td>
+            <td> <a  href="http://localhost/controlUsuairios/Sucursales/insertarSucursal.php" ><img  src="../Views/img/adc.png" width="20"  /></a></td>
+        </tr>
+    </table
         <hr />
         <table border=1 >
             <tr>

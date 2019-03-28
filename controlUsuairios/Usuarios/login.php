@@ -18,7 +18,7 @@
                 <div class="col-lg-12">		
                     <div class="card">
                         <div class="loginBox">
-                        <img src="../../img/php-mysql-logo.png" class="img-responsive" alt="PHP MySQL logos">
+                          
                             <h2>Login</h2>
 
                             <form action="validarLogin.php" method="post">                           	
@@ -35,7 +35,7 @@
                             <p><a href="#showForm" data-toggle="collapse" aria-expanded="false" aria-controls="collapse">Lost your password?</a></p>	
                             <div class="collapse" id="showForm">
                                 <div class='well'>
-                                    <form action="password-recovery.php" method="post">
+                                    <form action="recuperarContraseña.php" method="post">
                                         <div class="form-group">										
                                             <input type="email" class="form-control" name="email" placeholder="Enter the email associated with the password." required>
                                         </div>

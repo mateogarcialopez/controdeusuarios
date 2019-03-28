@@ -13,6 +13,7 @@ and open the template in the editor.
 
         <?php
         $id = $_GET["parametro"];
+       
         require "../controlDB.php";
         $obj = new controlDB();
         $data = $obj->consultar("SELECT * FROM public.\"tbl_Articulos\" where \"pk_Articulo\"='$id' ");
