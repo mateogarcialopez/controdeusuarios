@@ -20,7 +20,7 @@ session_start();
 
         <?php
 			// Connection info. file
-		include '../Articulos/listar.php';
+		
 		include 'conn.php';
 
 		// Connection variables
@@ -33,7 +33,7 @@ session_start();
 
 		// data sent from form login.html 
 		$email = $_POST['email'];
-		$password = $_POST['password'];
+		$password = md5($_POST['password']);
 
 		// Query sent to database
 		$result = mysqli_query($conn, "SELECT Email, Password, Name, tipo_usr FROM users WHERE Email = '$email'");
@@ -50,8 +50,10 @@ session_start();
 			match the password hash on the database. If everything is OK the session
 			is created for one minute. Change 1 on $_SESSION[start] to 5 for a 5 minutes session.
 			*/
-		if (password_verify($_POST['password'], $hash)) {
-
+		//if (password_verify($_POST['password'], $hash)) {
+		
+		if ($password==$hash) {
+			include '../Articulos/listar.php';
 			$_SESSION['loggedin'] = true;
 			$_SESSION['name'] = $row['Name'];
 			$_SESSION['tipo_usr'] = $row['tipo_usr'];

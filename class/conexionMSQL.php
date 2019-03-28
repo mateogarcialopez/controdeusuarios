@@ -1,5 +1,6 @@
 <?php 
 session_start();
+
 //$rol=$_SESSION['tipo_usr'];
 //echo "prueba".$rol;
 

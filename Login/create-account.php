@@ -53,7 +53,8 @@
 			$tipo_usr = $_POST['form-group'];
 
 			// The password_hash() function convert the password in a hash before send it to the database
-			$passHash = password_hash($pass, PASSWORD_DEFAULT);
+			//$passHash = password_hash($pass, PASSWORD_DEFAULT); AQUI SE ENCRIPTA LA CONTRASEÑA
+			$passHash = md5($pass);
 
 			// Query to send Name, Email and Password hash to the database
 			//	for ($i = 5; $i <= 10000; $i++) { -----------------------------------------

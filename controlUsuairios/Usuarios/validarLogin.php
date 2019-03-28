@@ -36,10 +36,10 @@ session_start();
             $password = $_POST['password'];
             
 
-            function capturarUsuario() {
+           /* function capturarUsuario() {
                 $tipo_usr = $row['tipo_usr'];
                 return $tipo_usr;
-            }
+            }*/
 
             // Query sent to database
             $result = mysqli_query($conn, "SELECT Email, Password, Name FROM users WHERE Email = '$email'");
