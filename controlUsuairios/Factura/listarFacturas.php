@@ -8,10 +8,10 @@
         <title>Facturas</title>
         <script>
             function modificar(id) {
-                window.location = "http://localhost/controlUsuairios/Factura/modificarFactura.php?parametro=" + id;
+                window.location = "http://localhost/controlDeUusuarios/controlUsuairios/Factura/modificarFactura.php?parametro=" + id;
             }
             function eliminar(id) {
-                window.location = "http://localhost/controlUsuairios/Factura/capturarFactura.php?parametro=" + id + "&funcion=eliminar";
+                window.location = "http://localhost/controlDeUusuarios/controlUsuairios/Factura/capturarFactura.php?parametro=" + id + "&funcion=eliminar";
             }
         </script>
     </head>
@@ -25,7 +25,9 @@
     <table border=1 >
         <tr>
             <td> <a  href="http://localhost/controlUsuairios/menuPrincipal.php" ><img  src="../Views/img/home.png" width="20"  /></a></td>
-            <td> <a  href="http://localhost/controlUsuairios/Factura/insertarFactura.php" ><img  src="../Views/img/adc.png" width="20"  /></a></td>
+            <td> <a  href="http://localhost/controlDeUusuarios/controlUsuairios/Factura/insertarFactura.php" ><img  src="../Views/img/adc.png" width="20"  /></a></td>
+            <td><p><a href='../Articulos/listarArticulos.php'>ARTICULOS</a></p></td>
+            <td><p><a href='../Sucursales/listarSucursales.php'>SUCURSALES</a></p></td>  
         </tr>
     </table
     <hr />

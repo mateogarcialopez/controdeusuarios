@@ -8,11 +8,11 @@
         <script>
             function modificar(id){
             
-                window.location="http://localhost/controlUsuairios/Sucursales/modificarSucursal.php?parametro="+id;
+                window.location="http://localhost/controlDeUusuarios/controlUsuairios/Sucursales/modificarSucursal.php?parametro="+id;
                 
             }
             function eliminar(id){
-                window.location="http://localhost/controlUsuairios/Sucursales/capturarSucursal.php?parametro="+id+"&funcion=eliminar";
+                window.location="http://localhost/controlDeUusuarios/controlUsuairios/Sucursales/capturarSucursal.php?parametro="+id+"&funcion=eliminar";
             }
         </script>
     </head>
@@ -26,10 +26,12 @@
         <table border=1 >
         <tr>
             <td> <a  href="http://localhost/controlUsuairios/menuPrincipal.php" ><img  src="../Views/img/home.png" width="20"  /></a></td>
-            <td> <a  href="http://localhost/controlUsuairios/Sucursales/insertarSucursal.php" ><img  src="../Views/img/adc.png" width="20"  /></a></td>
+            <td> <a  href="http://localhost/controlDeUusuarios/controlUsuairios/Sucursales/insertarSucursal.php" ><img  src="../Views/img/adc.png" width="20"  /></a></td>
+            <td><p><a href='../Articulos/listarArticulos.php'>ARTICULOS</a></p></td>
+            <td><p><a href='../Factura/listarFacturas.php'>FACTURAS</a></p></td>
         </tr>
     </table
-        <hr />
+        <hr/>
         <table border=1 >
             <tr>
                 <td>NIT</td>

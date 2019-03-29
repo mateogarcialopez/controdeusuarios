@@ -29,7 +29,7 @@ session_start();
             $dbhost = "localhost";    // localhost or IP
             $dbuser = "root";    // database username
             $dbpass = "";       // database password
-            $dbname = "phplogin";    // database name
+            $dbname = "modeloventas";    // database name
             // Connection variables
             $conn = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
 

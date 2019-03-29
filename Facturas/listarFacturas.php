@@ -29,6 +29,10 @@
     <table border=1>
         <tr>
             <td> <a href="http://localhost/controlDeUusuarios/Facturas/guardarFacturas.php"><img src="../img/adc.png" width="20" /></a></td>
+            <td> <p><a href='../Articulos/listar.php'>Articulos</a></p></td>
+            <td><p><a href='../Sucursal/listarSucursales.php'>Sucursales</a></p></td>
+            <td><p><a href='../Login/logout.php'>Salir</a></p></td>
+
         </tr>
     </table <hr>
     <table border="1">
